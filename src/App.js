@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       meaningOfLife: 42
-    }
+    };
   }
 
   render() {

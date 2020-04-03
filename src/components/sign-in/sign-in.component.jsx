@@ -12,20 +12,20 @@ class SignIn extends React.Component {
     this.state = {
       email: '',
       password: ''
-    }
+    };
   }
 
   handleSubmit = event => {
     event.preventDefault();
 
-    this.setState({ email: '', password: '' })
-  }
+    this.setState({ email: '', password: '' });
+  };
 
   handleChange = event => {
     const { value, name } = event.target;
 
     this.setState({ [name]: value });
-  }
+  };
 
   render() {
     return (
@@ -34,7 +34,7 @@ class SignIn extends React.Component {
         <span>Sign in with your email and password</span>
 
         <form onSubmit={this.handleSubmit}>
-          <FormInput 
+          <FormInput
             name='email'
             type='email'
             value={this.state.email}
@@ -54,7 +54,7 @@ class SignIn extends React.Component {
           <CustomButton type='submit'>SIGN IN</CustomButton>
         </form>
       </div>
-    )
+    );
   }
 }
 
