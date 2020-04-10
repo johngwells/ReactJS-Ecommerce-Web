@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
@@ -20,8 +21,8 @@ const Cart = ({ cartItems }) => (
 
 // Using Reselect So the cart dropdown doesnt get rerendered whenever
 // the state changes when unrelated to the cart
-const mapStateToProps = (state) => ({
-  cartItems: selectCartItems(state)
+const mapStateToProps =  createStructuredSelector({
+  cartItems: selectCartItems
 });
 
 // const mapStateToProps = ({ cart: { cartItems } }) => ({
