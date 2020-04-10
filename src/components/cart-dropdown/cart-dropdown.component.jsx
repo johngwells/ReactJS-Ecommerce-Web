@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import CustomButton from '../custom-button/custom-button.component';
 import CartItem from '../cart-item/cart-item.component';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
 
 import './cart-dropdown.styles.scss';
 
@@ -17,8 +18,14 @@ const Cart = ({ cartItems }) => (
   </div>
 );
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  cartItems
+// Using Reselect So the cart dropdown doesnt get rerendered whenever
+// the state changes when unrelated to the cart
+const mapStateToProps = (state) => ({
+  cartItems: selectCartItems(state)
 });
+
+// const mapStateToProps = ({ cart: { cartItems } }) => ({
+//   cartItems
+// });
 
 export default connect(mapStateToProps)(Cart);
