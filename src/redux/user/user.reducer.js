@@ -4,8 +4,6 @@ const INITIAL_STATE = {
   currentUser: null
 }
 
-// if state is ever undefined state will be INITIAL STATE, 
-// note: null is a value so it will be state & not INITIAL
 const userReducer = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case UserActionTypes.SET_CURRENT_USER:
