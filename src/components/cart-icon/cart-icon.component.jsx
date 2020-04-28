@@ -25,13 +25,4 @@ const mapStateToProps = createStructuredSelector({
   itemCount: selectCartItemsCount
 });
 
-/*
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  itemCount: cartItems.reduce(
-    (accumaltedQuantity, cartItem) => accumaltedQuantity + cartItem.quantity,
-    0
-  )
-});
-*/
-
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);

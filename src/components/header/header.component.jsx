@@ -38,12 +38,6 @@ const Header = ({ currentUser, hidden }) => (
   </HeaderContainer>
 );
 
-// Destructuring using a different method
-// const mapStateToProps = ({ user: { currentUser }, cart: { hidden } }) => ({
-//   currentUser,
-//   hidden,
-// });
-
 // Structured selector will automatically pass top level state to each selector
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
